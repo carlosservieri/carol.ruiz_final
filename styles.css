@@ -1,0 +1,106 @@
+/* styles.css - Customizations and Premium Effects for Carol Ruiz Advogada (Green Theme) */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --color-navy-dark: #122216; /* Deep Forest Green */
+  --color-navy-medium: #1e3624;
+  --color-navy-light: #32533a;
+  --color-grey-light: #f3f7f4;
+  --color-grey-medium: #e2e9e4;
+  --color-accent-gold: #698f73; /* Sage Accent Green */
+}
+
+html {
+  scroll-padding-top: 96px; /* Offsets the sticky header height (80px) + 16px of breathing room */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--color-grey-light);
+  color: var(--color-navy-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Custom Animations & Transitions */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(18, 34, 22, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-grey-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-navy-medium);
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 233, 228, 0.8);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Subtle Hero Gradient Grid */
+.hero-grid {
+  position: relative;
+  background-color: var(--color-navy-dark);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(30, 54, 36, 0.5) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(50, 83, 58, 0.3) 0px, transparent 50%);
+}
+
+.hero-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+/* Cookie Banner Transition */
+#cookie-banner {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#cookie-banner.hidden-banner {
+  transform: translateY(100%) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Custom form states */
+.form-input:focus {
+  border-color: var(--color-navy-light);
+  box-shadow: 0 0 0 3px rgba(30, 54, 36, 0.1);
+}
